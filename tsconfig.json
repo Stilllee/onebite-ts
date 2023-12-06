@@ -1,7 +1,9 @@
 {
   "compilerOptions": {
     // 컴파일 결과 생성되는 자바스크립트 코드의 버전을 설정하는 옵션
-    "target": "ES5"
+    "target": "ESNext",
+    // 자바스크립트 코드의 모듈 시스템을 설정하는 옵션
+    "module": "CommonJS"
   },
   // tsc에게 컴파일 할 타입스크립트 파일의 범위와 위치를 알려주는 옵션
   "include": ["src"]
