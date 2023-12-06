@@ -8,6 +8,8 @@
     "outDir": "dist",
     // 타입스크립트 컴파일러의 타입 검사 엄격함 수준을 정하는 옵션
     "strict": false,
+    // 타입스크립트에서 null 값을 null 타입 이외의 타입의 변수에 할당하는 것을 금지할지 허락할지 여부를 결정하는 옵션
+    "strictNullChecks": false,
     // 타입스크립트 컴파일러가 프로젝트 내의 모듈들을 어떻게 식별하고 처리할지 결정하는 옵션
     // 'moduleDetection'을 'force'로 설정하여 모든 파일을 모듈로 취급하게 함
     "moduleDetection": "force"

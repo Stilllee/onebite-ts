@@ -22,3 +22,6 @@ let null1: null = null;
 
 // undefined
 let unde1: undefined = undefined;
+
+// null 값을 다른 타입의 변수에 할당하기
+let numA: number = null;
