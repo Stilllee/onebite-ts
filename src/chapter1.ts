@@ -27,9 +27,3 @@ let unde1: undefined = undefined;
 // 리터럴 -> 값
 let numA: 10 = 10;
 let strA: "hello" = "hello";
-
-// 에러메세지
-numA = 12; // '12' 형식은 '10' 형식에 할당할 수 없습니다.
-strA = "bye"; // '"bye:' 형식은 '"hello"' 형식에 할당할 수 없습니다.
-
-let boolA: true = false; // 'false' 형식은 'true' 형식에 할당할 수 없습니다.
