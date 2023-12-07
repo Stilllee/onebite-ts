@@ -26,10 +26,7 @@ let countryCodes: CountryCodes = {
 
 type CountryNumberCodes = {
   [key: string]: number;
+  Korea: number; // 필수 프로퍼티
 };
 
-let countryNumberCodes: CountryNumberCodes = {
-  Korea: 410,
-  UnitedState: 840,
-  UnitedKingdom: 826,
-};
+let countryNumberCodes: CountryNumberCodes = {}; // 에러메세지 : 'Korea' 속성이 '{}' 형식에 없지만 'CountryNumberCodes' 형식에서 필수입니다.
