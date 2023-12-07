@@ -26,9 +26,9 @@ let countryCodes: CountryCodes = {
 
 type CountryNumberCodes = {
   [key: string]: number;
-  Korea: string; // 오류메세지 : 'Korea' 형식의 'string' 속성을 'string' 인덱스 유형 'number'에 할당할 수 없습니다.
+  Korea: number;
 };
 
 let countryNumberCodes: CountryNumberCodes = {
-  Korea: "kr",
+  Korea: 410,
 };
