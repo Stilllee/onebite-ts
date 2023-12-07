@@ -5,13 +5,6 @@ type User = {
   nickname: string;
   mbti: string;
 };
-// 동일한 스코프에서 중복X
-type User = {}; // 에러메세지: 'User' 식별자가 중복되었습니다.
-
-// 별도의 스코프에서는 중복O
-function func() {
-  type User = {};
-}
 
 let user1: User = {
   id: 1,
@@ -20,9 +13,23 @@ let user1: User = {
   mbti: "ESTJ",
 };
 
-let user2: User = {
-  id: 1,
-  name: "coco",
-  nickname: "wawa",
-  mbti: "INFJ",
+// 인덱스 시그니처
+type CountryCodes = {
+  [key: string]: string;
+};
+
+let countryCodes: CountryCodes = {
+  Korea: "ko",
+  UnitedState: "us",
+  UnitedKingdom: "uk",
+};
+
+type CountryNumberCodes = {
+  [key: string]: number;
+};
+
+let countryNumberCodes: CountryNumberCodes = {
+  Korea: 410,
+  UnitedState: 840,
+  UnitedKingdom: 826,
 };
