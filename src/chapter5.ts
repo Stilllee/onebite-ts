@@ -7,9 +7,15 @@ enum Role {
   GUEST, // 12 할당
 }
 
+enum Language {
+  korean = "ko",
+  english = "en",
+}
+
 const user1 = {
   name: "woodstock",
   role: Role.ADMIN, // 관리자
+  language: Language.korean,
 };
 
 const user2 = {
@@ -23,3 +29,5 @@ const user3 = {
 };
 
 console.log(user1, user2, user3); // { name: 'woodstock', role: 10 } { name: 'snoopy', role: 12 } { name: 'jerry', role: 11 }
+
+console.log(user1); // { name: 'woodstock', role: 10, language: 'ko' }
