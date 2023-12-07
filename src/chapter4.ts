@@ -26,7 +26,9 @@ let countryCodes: CountryCodes = {
 
 type CountryNumberCodes = {
   [key: string]: number;
-  Korea: number; // 필수 프로퍼티
+  Korea: string; // 오류메세지 : 'Korea' 형식의 'string' 속성을 'string' 인덱스 유형 'number'에 할당할 수 없습니다.
 };
 
-let countryNumberCodes: CountryNumberCodes = {}; // 에러메세지 : 'Korea' 속성이 '{}' 형식에 없지만 'CountryNumberCodes' 형식에서 필수입니다.
+let countryNumberCodes: CountryNumberCodes = {
+  Korea: "kr",
+};
