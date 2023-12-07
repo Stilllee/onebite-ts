@@ -1,7 +1,20 @@
 // object
-let user: object = {
+let user: {
+  id: number;
+  name: string;
+} = {
   id: 1,
   name: "woodstock",
 };
 
-user.id; // 에러메세지: 'object'형식에 'id'속성이 없습니다.
+user.id;
+
+let cake: {
+  name: string;
+  brand: string;
+  cost: number;
+} = {
+  name: "스초생",
+  brand: "투썸",
+  cost: 3,
+};
