@@ -5,6 +5,13 @@ type User = {
   nickname: string;
   mbti: string;
 };
+// 동일한 스코프에서 중복X
+type User = {}; // 에러메세지: 'User' 식별자가 중복되었습니다.
+
+// 별도의 스코프에서는 중복O
+function func() {
+  type User = {};
+}
 
 let user1: User = {
   id: 1,
