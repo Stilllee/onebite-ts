@@ -7,6 +7,10 @@ let user: {
   name: "woodstock",
 };
 
-user = {
-  name: "snoopy",
+let config: {
+  readonly apiKey: string;
+} = {
+  apiKey: "MY API KEY",
 };
+
+config.apiKey = "hacked"; // 에러메세지 : 읽기 전용 속성이므로 'apiKey'에 할당할 수 없습니다.
