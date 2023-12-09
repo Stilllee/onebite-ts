@@ -13,9 +13,9 @@ unknownVar = 1;
 unknownVar = () => {};
 
 // 연산 불가능
-unknownVar * 2; // 에러메세지: 'unknownVar'은(는) 'unknown' 형식입니다.
+// unknownVar * 2; // 에러메세지: 'unknownVar'은(는) 'unknown' 형식입니다.
 // 메서드 사용 불가능
-unknownVar.toUpperCase(); // 에러메세지: 'unknownVar'은(는) 'unknown' 형식입니다.
+// unknownVar.toUpperCase(); // 에러메세지: 'unknownVar'은(는) 'unknown' 형식입니다.
 
 // 타입 정제 또는 타입좁히기를 통해서만 unknown타입의 값을 사용할 수 있다.
 if (typeof unknownVar === "number") {
