@@ -1,17 +1,24 @@
 // any
 // 특정 변수의 타입을 확실히 모를 때 사용할 수 있는 타입
 let anyVar: any = 10;
-anyVar = "hello";
-
-anyVar = true;
-anyVar = {};
-anyVar = () => {};
-
-// anyVar에 함수를 할당하고
-// 문자열이나 숫자 관련 메서드를 호출해도 타입에러는 일으키지 않지만,
-// 컴파일하거나 ts-node를 실행하면 런타임 오류가 발생한다.
-anyVar.toUpperCase();
-anyVar.toFixed();
 
 let num: number = 10;
 num = anyVar;
+
+// unknown
+let unknownVar: unknown;
+
+unknownVar = "";
+unknownVar = 1;
+unknownVar = () => {};
+
+// 연산 불가능
+unknownVar * 2; // 에러메세지: 'unknownVar'은(는) 'unknown' 형식입니다.
+// 메서드 사용 불가능
+unknownVar.toUpperCase(); // 에러메세지: 'unknownVar'은(는) 'unknown' 형식입니다.
+
+// 타입 정제 또는 타입좁히기를 통해서만 unknown타입의 값을 사용할 수 있다.
+if (typeof unknownVar === "number") {
+  // 이 조건이 참이된다면 unknownVar는 number 타입으로 볼 수 있음
+  num = unknownVar;
+}
