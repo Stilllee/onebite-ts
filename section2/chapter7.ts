@@ -28,9 +28,9 @@ let anyVar: any;
 
 let b: never;
 // never에는 어떠한 값도 할당할 수 없다.
-b = 1; // 에러메세지: 'number' 형식은 'never' 형식에 할당할 수 없습니다.
+/* b = 1; // 에러메세지: 'number' 형식은 'never' 형식에 할당할 수 없습니다.
 b = {}; // 에러메세지: '{}' 형식은 'never' 형식에 할당할 수 없습니다.
 b = ""; // 에러메세지: 'string' 형식은 'never' 형식에 할당할 수 없습니다.
 b = undefined; // 에러메세지: 'undefined' 형식은 'never' 형식에 할당할 수 없습니다.
 b = null; // 에러메세지: 'null' 형식은 'never' 형식에 할당할 수 없습니다.
-b = anyVar; // 에러메세지: 'any' 형식은 'never' 형식에 할당할 수 없습니다.
+b = anyVar; // 에러메세지: 'any' 형식은 'never' 형식에 할당할 수 없습니다. */

@@ -1,16 +1,20 @@
-// object
-let user: {
-  id?: number;
-  name: string;
-} = {
-  id: 1,
-  name: "woodstock",
-};
+/**
+ * unknown 타입
+ * 타입계층도의 최상단
+ */
 
-let config: {
-  readonly apiKey: string;
-} = {
-  apiKey: "MY API KEY",
-};
+function unknownExam() {
+  // 모든 타입은 unknown타입으로 업캐스트 가능
+  let a: unknown = 1;
+  let b: unknown = "hello";
+  let c: unknown = true;
+  let d: unknown = null;
+  let e: unknown = undefined;
 
-// config.apiKey = "hacked"; // 에러메세지 : 읽기 전용 속성이므로 'apiKey'에 할당할 수 없습니다.
+  // 다운캐스트는 불가능
+  let unknownVar: unknown;
+
+  let num: number = unknownVar; // 오류메세지: 'unknown' 형식은 'number' 형식에 할당할 수 없습니다.
+  let str: string = unknownVar; // 오류메세지: 'unknown' 형식은 'string' 형식에 할당할 수 없습니다.
+  let bool: boolean = unknownVar; // 오류메세지: 'unknown' 형식은 'boolean' 형식에 할당할 수 없습니다.
+}
