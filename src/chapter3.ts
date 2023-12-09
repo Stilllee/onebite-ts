@@ -35,7 +35,21 @@ function neverExam() {
   let bool: boolean = neverFunc();
 
   // 다른 타입이 never타입으로 다운캐스트 불가능
-  let never1: never = 10; // 오류메세지: 'number' 형식은 'never' 형식에 할당할 수 없습니다.
+  /* let never1: never = 10; // 오류메세지: 'number' 형식은 'never' 형식에 할당할 수 없습니다.
   let never2: never = "string"; // 오류메세지: 'string' 형식은 'never' 형식에 할당할 수 없습니다.
-  let never3: never = true; // 오류메세지: 'true' 형식은 'never' 형식에 할당할 수 없습니다.
+  let never3: never = true; // 오류메세지: 'true' 형식은 'never' 형식에 할당할 수 없습니다. */
+}
+
+/**
+ * void 타입
+ * undefined의 슈퍼타입
+ */
+
+function voidExam() {
+  function voidFunc(): void {
+    console.log("hi");
+    return undefined;
+  }
+
+  let voidVar: void = undefined;
 }
