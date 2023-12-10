@@ -62,7 +62,7 @@ function anyExam() {
   let unknownVar: unknown;
   let anyVar: any;
   let undefinedVar: undefined;
-  let neverVar: never;
+  // let neverVar: never;
 
   // unknown타입이 any타입으로 다운캐스트 가능
   anyVar = unknownVar;
@@ -70,5 +70,5 @@ function anyExam() {
   undefinedVar = anyVar;
 
   // 예외적으로 any타입이 never타입으로는 다운캐스트 불가능
-  neverVar = anyVar; // 오류메세지: 'any' 형식은 'never' 형식에 할당할 수 없습니다.
+  // neverVar = anyVar; // 오류메세지: 'any' 형식은 'never' 형식에 할당할 수 없습니다.
 }
