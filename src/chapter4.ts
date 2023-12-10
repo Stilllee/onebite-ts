@@ -35,7 +35,7 @@ let dog: Dog = {
 };
 
 animal = dog; // ✅ OK
-dog = animal; // ❌ NO
+// dog = animal; // ❌ NO
 
 type Book = {
   name: string;
@@ -56,4 +56,26 @@ let programmingBook: ProgrammingBook = {
 };
 
 book = programmingBook; // ✅ OK
-programmingBook = book; // ❌ NO
+// programmingBook = book; // ❌ NO
+
+/**
+ * 초과 프로터피 검사
+ */
+
+let book2: Book = {
+  name: "한 입 크기로 잘라먹는 리액트",
+  price: 33000,
+  skill: "ReactJS",
+};
+
+function func(book: Book) {}
+func({
+  name: "한 입 크기로 잘라먹는 리액트",
+  price: 33000,
+  skill: "ReactJS",
+});
+
+// 단순히 변수를 초기화 할 때 객체 리터럴을 사용하지만 않으면 발생하지 않는다.
+// 별도의 다른 변수에 보관한 다음 변수 값을 초기화 값으로 사용하면 발생하지 않는다.
+let book3: Book = programmingBook; // ✅ OK
+func(programmingBook); // ✅ OK
