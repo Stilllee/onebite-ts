@@ -65,14 +65,14 @@ book = programmingBook; // ✅ OK
 let book2: Book = {
   name: "한 입 크기로 잘라먹는 리액트",
   price: 33000,
-  skill: "ReactJS",
+  // skill: "ReactJS",
 };
 
 function func(book: Book) {}
 func({
   name: "한 입 크기로 잘라먹는 리액트",
   price: 33000,
-  skill: "ReactJS",
+  // skill: "ReactJS",
 });
 
 // 단순히 변수를 초기화 할 때 객체 리터럴을 사용하지만 않으면 발생하지 않는다.
