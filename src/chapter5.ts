@@ -15,16 +15,6 @@ a = true;
 
 let arr: (number | string | boolean)[] = [1, "hello", true];
 
-type Dog = {
-  name: string;
-  color: string;
-};
-
-type Person = {
-  name: string;
-  language: string;
-};
-
 type Union1 = Dog | Person;
 
 let union1: Union1 = {
@@ -43,7 +33,31 @@ let union3: Union1 = {
   language: "",
 };
 
-let union4: Union1 = {
+/* let union4: Union1 = {
   // ❌
   name: "",
+}; */
+
+/**
+ * 교집합 (Intersection) 타입
+ */
+
+let variable: number & string; // never 타입으로 추론된다
+
+type Dog = {
+  name: string;
+  color: string;
+};
+
+type Person = {
+  name: string;
+  language: string;
+};
+
+type Intersection = Dog & Person;
+
+let intersection: Intersection = {
+  name: "",
+  color: "",
+  language: "",
 };
