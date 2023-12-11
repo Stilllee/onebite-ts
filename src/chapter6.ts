@@ -24,3 +24,11 @@ function func() {
 function func2(message = "hello") {
   return "hello";
 }
+
+let d;
+d = 10;
+d.toFixed();
+
+d = "hello";
+d.toUpperCase();
+d.toFixed(); // 오류
