@@ -35,3 +35,5 @@ d.toUpperCase();
 
 const num = 10; // 10 Number Literal 타입으로 추론
 const str = "hello"; // (string | number)[] 타입으로 추론
+
+let arr = [1, "string"]; // (string | number)[] 타입으로 추론
