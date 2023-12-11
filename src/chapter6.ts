@@ -31,4 +31,7 @@ d.toFixed();
 
 d = "hello";
 d.toUpperCase();
-d.toFixed(); // 오류
+// d.toFixed(); // 오류
+
+const num = 10; // 10 Number Literal 타입으로 추론
+const str = "hello"; // (string | number)[] 타입으로 추론
