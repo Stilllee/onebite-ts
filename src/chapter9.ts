@@ -23,14 +23,18 @@ type Guest = {
 type User = Admin | Member | Guest;
 
 function login(user: User) {
-  if (user.tag === "ADMIN") {
-    // Admin
-    console.log(`${user.name}님 현재까지 ${user.kickCount}명 추방했습니다`);
-  } else if (user.tag === "MEMBER") {
-    // Member
-    console.log(`${user.name}님 현재까지 ${user.point}모았습니다`);
-  } else {
-    // Guest
-    console.log(`${user.name}님 현재까지 ${user.visitCount}번 오셨습니다`);
+  switch (user.tag) {
+    case "ADMIN": {
+      console.log(`${user.name}님 현재까지 ${user.kickCount}명 추방했습니다`);
+      break;
+    }
+    case "MEMBER": {
+      console.log(`${user.name}님 현재까지 ${user.point}모았습니다`);
+      break;
+    }
+    case "GUEST": {
+      console.log(`${user.name}님 현재까지 ${user.visitCount}번 오셨습니다`);
+      break;
+    }
   }
 }
