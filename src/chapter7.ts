@@ -31,4 +31,5 @@ let dog = {
 
 let num1 = 10 as never; // ✅ 10은 number타입, never는 모든 타입의 서브타입 -> A가 B의 슈퍼타입
 let num2 = 10 as unknown; // ✅ 10은 number타입, unknown은 모든 타입의 슈퍼타입인 전체 집합타임 -> A가 B의 서브타입
-let num3 = 10 as string; // ❌ 단언 불가
+
+let num3 = 10 as unknown as string; // 다중 단언으로 가능하게 만들 수 있지만 권장하지 ❌
