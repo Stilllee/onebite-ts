@@ -33,3 +33,16 @@ let num1 = 10 as never; // ✅ 10은 number타입, never는 모든 타입의 서
 let num2 = 10 as unknown; // ✅ 10은 number타입, unknown은 모든 타입의 슈퍼타입인 전체 집합타임 -> A가 B의 서브타입
 
 let num3 = 10 as unknown as string; // 다중 단언으로 가능하게 만들 수 있지만 권장하지 ❌
+
+/**
+ * const 단언
+ */
+
+let num4 = 10 as const; // 10 Number Literal 타입으로 단언됨
+
+let cat = {
+  name: "야옹이",
+  color: "yellow",
+} as const; // 모든 프로퍼티가 readonly를 갖도록 단언됨
+
+cat.name = "";
