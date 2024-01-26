@@ -38,3 +38,61 @@ function login(user: User) {
     }
   }
 }
+
+/**
+ * 사례 2.
+ */
+// 비동기 작업의 결과를 처리하는 객체
+
+type LoadingTask = {
+  state: "LOADING";
+};
+type FailedTask = {
+  state: "FAILED";
+  error: {
+    message: string;
+  };
+};
+type SuccessTask = {
+  state: "SUCCESS";
+  response: {
+    data: string;
+  };
+};
+
+type AsyncTask = LoadingTask | FailedTask | SuccessTask;
+
+function processResult(task: AsyncTask) {
+  switch (task.state) {
+    case "LOADING": {
+      console.log("로딩 중");
+      break;
+    }
+    case "FAILED": {
+      console.log(`에러 발생 : ${task.error.message}`);
+      break;
+    }
+    case "SUCCESS": {
+      console.log(`성공 : ${task.response.data}`);
+      break;
+    }
+  }
+}
+
+const loading: AsyncTask = {
+  state: "LOADING",
+};
+
+const failed: AsyncTask = {
+  state: "FAILED",
+  error: {
+    message: "오류 발생 원인은 ~~",
+  },
+};
+
+const success: AsyncTask = {
+  state: "SUCCESS",
+  response: {
+    data: "데이터 ~~",
+  },
+};
