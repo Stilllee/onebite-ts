@@ -45,4 +45,20 @@ let cat = {
   color: "yellow",
 } as const; // 모든 프로퍼티가 readonly를 갖도록 단언됨
 
-cat.name = "";
+// cat.name = "";
+
+/**
+ * Non Null 단언
+ */
+
+type Post = {
+  title: string;
+  author?: string;
+};
+
+let post: Post = {
+  title: "게시글1",
+  author: "woodstock",
+};
+
+const len: number = post.author!.length; // 값 뒤에 !를 붙여주면 값이 `undefined`이거나 `null`이 아닐것으로 단언할 수 있다.
