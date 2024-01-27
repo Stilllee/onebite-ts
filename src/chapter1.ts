@@ -30,10 +30,10 @@ function introduce(name = "woodstock", mbti?: "ESTJ", hp?: number) {
 introduce("woodstock", "ESTJ", 70);
 introduce("woodstock");
 
-function getSum(...rest: number[]) {
+function getSum(...rest: [number, number, number]) {
   let sum = 0;
   rest.forEach((it) => (sum += it));
 }
 
 getSum(1, 2, 3); // 6
-getSum(1, 2, 3, 4, 5); // 15
+getSum(1, 2, 3, 4, 5); // Error : 3개의 인수가 필요한데 5개를 가져왔습니다.
