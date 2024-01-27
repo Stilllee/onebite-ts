@@ -36,4 +36,4 @@ function getSum(...rest: [number, number, number]) {
 }
 
 getSum(1, 2, 3); // 6
-getSum(1, 2, 3, 4, 5); // Error : 3개의 인수가 필요한데 5개를 가져왔습니다.
+// getSum(1, 2, 3, 4, 5); // Error : 3개의 인수가 필요한데 5개를 가져왔습니다.
