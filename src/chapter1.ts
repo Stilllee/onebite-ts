@@ -18,6 +18,14 @@ const add = (a: number, b: number) => a + b;
 /**
  * 함수의 매개변수
  */
-function introduce(name = "woodstock") {
+
+function introduce(name = "woodstock", mbti?: "ESTJ", hp?: number) {
   console.log(`name : ${name}`);
+  console.log(`MBTI : ${mbti}`);
+  if (typeof hp === "number") {
+    console.log(`HP : ${hp + 30}`);
+  }
 }
+
+introduce("woodstock", "ESTJ", 70);
+introduce("woodstock");
