@@ -14,3 +14,10 @@ function func(a: number, b: number) {
  * 화살표 함수의 타입을 정의하는 방법
  */
 const add = (a: number, b: number) => a + b;
+
+/**
+ * 함수의 매개변수
+ */
+function introduce(name = "woodstock") {
+  console.log(`name : ${name}`);
+}
