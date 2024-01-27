@@ -43,10 +43,10 @@ let dogFunc = (dog: Dog) => {
   console.log(dog.color);
 };
 
-animalFunc = dogFunc; // Error : '(dog: Dog) => void' 형식은 '(animal: Animal) => void' 형식에 할당할 수 없습니다. 'dog' 및 'animal' 매개 변수의 형식이 호환되지 않습니다. 'color' 속성이 'Animal' 형식에 없지만 'Dog' 형식에서 필수입니다.
+// animalFunc = dogFunc; // Error : '(dog: Dog) => void' 형식은 '(animal: Animal) => void' 형식에 할당할 수 없습니다. 'dog' 및 'animal' 매개 변수의 형식이 호환되지 않습니다. 'color' 속성이 'Animal' 형식에 없지만 'Dog' 형식에서 필수입니다.
 let textFunc = (animal: Animal) => {
   console.log(animal.name);
-  console.log(animal.color); // Error : 'Animal' 형식에 'color' 속성이 없습니다.
+  // console.log(animal.color); // Error : 'Animal' 형식에 'color' 속성이 없습니다.
 };
 
 dogFunc = animalFunc;
@@ -55,3 +55,11 @@ let textFunc2 = (dog: Dog) => {
 };
 
 // 2-2. 매개변수의 개수가 다를 때
+type Func1 = (a: number, b: number) => void;
+type Func2 = (a: number) => void;
+
+let func1: Func1 = (a, b) => {};
+let func2: Func2 = (a) => {};
+
+func1 = func2;
+func2 = func1; // Error : 'Func1' 형식은 'Func2' 형식에 할당할 수 없습니다.
