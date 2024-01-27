@@ -17,5 +17,5 @@
     "esm": true
   },
   // tsc에게 컴파일 할 타입스크립트 파일의 범위와 위치를 알려주는 옵션
-  "include": ["src", "section2/chapter1.ts"]
+  "include": ["src"]
 }
