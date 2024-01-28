@@ -1,39 +1,38 @@
 /**
- * 함수 타입 정의
+ * 인터페이스
  */
 
-// 함수를 설명하는 가장 좋은 방법
-// 어떤 매개변수를 받고, 어떤 결과값을 반환하는지 이야기
-// 어떤 [타입의] 매개변수를 받고, 어떤 [타입의] 결과값을 반환하는지 이야기
+interface Person {
+  readonly name: string; // 읽기 전용 프로퍼티
+  hp?: number; // 선택적 프로퍼티
 
-function func(a: number, b: number) {
-  return a + b;
+  // 메서드 타입 정의
+  // sayHi: () => void; // 함수 표현식, 오버로딩 ❌
+  sayHi(): void; // 호출 시그니쳐, 오버로딩 가능 ✅
+  sayHi(a: number, b: number): void;
 }
 
-/**
- * 화살표 함수의 타입을 정의하는 방법
- */
-const add = (a: number, b: number) => a + b;
+const person: Person = {
+  name: "woodstock",
+  sayHi: function () {
+    console.log("Hi");
+  },
+};
 
-/**
- * 함수의 매개변수
- */
+person.sayHi();
 
-function introduce(name = "woodstock", mbti?: "ESTJ", hp?: number) {
-  console.log(`name : ${name}`);
-  console.log(`MBTI : ${mbti}`);
-  if (typeof hp === "number") {
-    console.log(`HP : ${hp + 30}`);
-  }
+// 인터페이스로 만든 타입을 Union 또는 intersection으로 이용하는 방법
+interface Animal {
+  name: string;
+  age: number;
 }
 
-introduce("woodstock", "ESTJ", 70);
-introduce("woodstock");
+// 방법 1. : 타입 별칭과 함께 사용
+type Type1 = number | string | Animal;
+type Type2 = number & string & Animal;
 
-function getSum(...rest: [number, number, number]) {
-  let sum = 0;
-  rest.forEach((it) => (sum += it));
-}
-
-getSum(1, 2, 3); // 6
-// getSum(1, 2, 3, 4, 5); // Error : 3개의 인수가 필요한데 5개를 가져왔습니다.
+// 방법 2. : 타입 주석에서 직접 사용
+const animal: Animal | number = {
+  name: "푸바오",
+  age: 3,
+};
