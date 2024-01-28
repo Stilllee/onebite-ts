@@ -62,4 +62,4 @@ let func1: Func1 = (a, b) => {};
 let func2: Func2 = (a) => {};
 
 func1 = func2;
-func2 = func1; // Error : 'Func1' 형식은 'Func2' 형식에 할당할 수 없습니다.
+// func2 = func1; // Error : 'Func1' 형식은 'Func2' 형식에 할당할 수 없습니다.
