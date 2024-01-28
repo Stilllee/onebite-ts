@@ -2,18 +2,18 @@
  * 인터페이스의 확장
  */
 
-interface Animal {
+type Animal = {
+  // 인터페이스는 인터페이스 뿐만 아니라 타입 별칭으로 정의된 객체도 확장할 수 있다.
   name: string;
   color: string;
-}
+};
 
 interface Dog extends Animal {
-  name: "wawa"; // 프로퍼티 재정의
   isBark: boolean;
 }
 
 const dog: Dog = {
-  name: "와와", // Error : '"와와"' 형식은 '"wawa"' 형식에 할당할 수 없습니다.
+  name: "와와",
   color: "white",
   isBark: true,
 };
