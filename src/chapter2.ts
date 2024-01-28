@@ -25,3 +25,13 @@ interface Cat extends Animal {
 interface Chicken extends Animal {
   isFly: boolean;
 }
+
+// 다중 확장
+interface DogCat extends Dog, Cat {}
+
+const dogCat: DogCat = {
+  name: "개냥이",
+  color: "cheese",
+  isBark: false,
+  isScratch: true,
+};
