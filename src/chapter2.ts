@@ -28,7 +28,7 @@ class Employee {
     console.log("일함");
   }
 }
-``;
+
 class ExecutiveOfficer extends Employee {
   // 필트
   officeNumber: number;
