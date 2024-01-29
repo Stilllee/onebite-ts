@@ -6,8 +6,8 @@
 
 class Employee {
   // 필드
-  name: string; // 기본값이 public이다.
-  public hp: number; // 직접 명시해주는 것도 가능하다.
+  private name: string;
+  public hp: number;
   public position: string;
 
   constructor(name: string, hp: number, position: string) {
@@ -18,10 +18,32 @@ class Employee {
 
   // 메서드
   work() {
-    console.log("일함");
+    console.log(`${this.name} 일함`); // 클래스 내부에서만 이 필드에 접근할 수 있음
+  }
+}
+
+class ExecutiveOfficer extends Employee {
+  // 필트
+  officeNumber: number;
+
+  // 생성자
+  constructor(
+    name: string,
+    hp: number,
+    position: string,
+    officeNumber: number
+  ) {
+    super(name, hp, position);
+    this.officeNumber = officeNumber;
+  }
+
+  // 메서드
+  func() {
+    // private는 파생클래스에서도 접근이 불가능하다.
+    this.name; // Error : 'name' 속성은 private이며 'Employee' 클래스 내에서만 액세스할 수 있습니다.
   }
 }
 
 const employee = new Employee("woodstock", 90, "developer");
-employee.name = "Snoopy";
+employee.name = "Snoopy"; // Error : 'name' 속성은 private이며 'Employee' 클래스 내에서만 액세스할 수 있습니다.
 employee.hp = 79;
