@@ -7,7 +7,7 @@
 class Employee {
   // 필드
   private name: string;
-  public hp: number;
+  protected hp: number;
   public position: string;
 
   constructor(name: string, hp: number, position: string) {
@@ -41,9 +41,12 @@ class ExecutiveOfficer extends Employee {
   func() {
     // private는 파생클래스에서도 접근이 불가능하다.
     this.name; // Error : 'name' 속성은 private이며 'Employee' 클래스 내에서만 액세스할 수 있습니다.
+
+    // protected는 파생클래스에서 접근이 가능하다.
+    this.hp;
   }
 }
 
 const employee = new Employee("woodstock", 90, "developer");
 employee.name = "Snoopy"; // Error : 'name' 속성은 private이며 'Employee' 클래스 내에서만 액세스할 수 있습니다.
-employee.hp = 79;
+employee.hp = 79; // 'hp' 속성은 보호된 속성이며 'Employee' 클래스 및 해당 하위 클래스 내에서만 액세스할 수 있습니다.
