@@ -28,6 +28,22 @@ class Employee {
     console.log("일함");
   }
 }
+``;
+class ExecutiveOfficer extends Employee {
+  // 필트
+  officeNumber: number;
+
+  // 생성자
+  constructor(
+    name: string,
+    hp: number,
+    position: string,
+    officeNumber: number
+  ) {
+    super(name, hp, position);
+    this.officeNumber = officeNumber;
+  }
+}
 
 const employeeB = new Employee("woodstock", 100, "개발자");
 console.log(employeeB);
