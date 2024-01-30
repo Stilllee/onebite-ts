@@ -16,3 +16,20 @@ function map<T, U>(arr: T[], callback: (item: T) => U) {
 
 map(arr, (it) => it * 2);
 map(["hi", "hello"], (it) => parseInt(it));
+
+/**
+ * forEach
+ */
+
+const arr2 = [1, 2, 3];
+arr2.forEach((it) => console.log(it));
+
+function forEach<T>(arr: T[], callback: (item: T) => void) {
+  for (let i = 0; i < arr.length; i++) {
+    callback(arr[i]);
+  }
+}
+
+forEach(arr2, (it) => {
+  console.log(it.toFixed());
+});
