@@ -34,4 +34,4 @@ let var2 = getLength("12345");
 
 let var3 = getLength({ length: 10 });
 
-let var4 = getLength(10); // Error : 'number' 형식의 인수는 '{ length: number; }' 형식의 매개 변수에 할당될 수 없습니다.
+// let var4 = getLength(10); // Error : 'number' 형식의 인수는 '{ length: number; }' 형식의 매개 변수에 할당될 수 없습니다.
