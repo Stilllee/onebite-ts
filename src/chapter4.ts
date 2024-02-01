@@ -41,3 +41,15 @@ let stringMap: Map<string> = {
 let booleanMap: Map<boolean> = {
   key: true,
 };
+
+/**
+ * 제네릭 타입 별칭
+ */
+
+type Map2<V> = {
+  [key: string]: V;
+};
+
+let stringMap2: Map2<string> = {
+  key: "hello",
+};
