@@ -53,3 +53,48 @@ type Map2<V> = {
 let stringMap2: Map2<string> = {
   key: "hello",
 };
+
+/**
+ * 제네릭 인터페이스의 활용 예시
+ * -> 유저 관리 프로그램
+ * -> 유저 구분 : 학생 유저 / 개발자 유저
+ */
+
+interface Student {
+  type: "student";
+  school: string;
+}
+
+interface Developer {
+  type: "developer";
+  skill: string;
+}
+
+interface User<T> {
+  name: string;
+  profile: T;
+}
+
+function goToSchool(user: User<Student>) {
+  const school = user.profile.school;
+  console.log(`${school}로 등교 완료`);
+}
+
+const developerUser: User<Developer> = {
+  name: "Woodstock",
+  profile: {
+    type: "developer",
+    skill: "TypeScript",
+  },
+};
+
+const studentUser: User<Student> = {
+  name: "Shuroeder",
+  profile: {
+    type: "student",
+    school: "Peanuts School",
+  },
+};
+
+goToSchool(developerUser); // Error: 'User<Developer>' 형식의 인수는 'User<Student>' 형식의 매개 변수에 할당될 수 없습니다. 'school' 속성이 'Developer' 형식에 없지만 'Student' 형식에서 필수입니다.
+goToSchool(studentUser);
