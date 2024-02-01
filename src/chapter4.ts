@@ -16,3 +16,28 @@ let keyPair2: KeyPair<boolean, string[]> = {
   key: true,
   value: ["1"],
 };
+
+/**
+ * 인덱스 시그니쳐
+ */
+
+interface NumberMap {
+  [key: string]: number;
+}
+
+let numberMap: NumberMap = {
+  key: -1231,
+  key2: 123123,
+};
+
+interface Map<V> {
+  [key: string]: V;
+}
+
+let stringMap: Map<string> = {
+  key: "value",
+};
+
+let booleanMap: Map<boolean> = {
+  key: true,
+};
