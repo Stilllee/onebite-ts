@@ -1,17 +1,27 @@
 /**
- * 제네릭
+ * 인덱스드 엑세스 타입
  */
 
-// 제네릭 함수
-function func<T>(value: T): T {
-  return value;
+interface Post {
+  title: string;
+  content: string;
+  author: {
+    id: number;
+    name: string;
+    age: number;
+  };
 }
 
-let num = func(10);
+function printAuthorInfo(author: Post["author"]) {
+  console.log(`${author.name}-${author.id}`);
+}
 
-let bool = func(true);
-
-let str = func("string");
-
-// 제네릭 함수를 호출할 때 다음과 같이 타입 변수에 할당할 타입을 직접 명시하는 것도 가능하다
-let arr = func<[number, number, number]>([1, 2, 3]);
+const post: Post = {
+  title: "게시글 제목",
+  content: "게시글 본문",
+  author: {
+    id: 1,
+    name: "woodstock",
+    age: 100,
+  },
+};
