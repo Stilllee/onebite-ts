@@ -2,7 +2,7 @@
  * 인덱스드 엑세스 타입
  */
 
-interface Post {
+type PostList = {
   title: string;
   content: string;
   author: {
@@ -10,13 +10,13 @@ interface Post {
     name: string;
     age: number;
   };
-}
+}[];
 
-function printAuthorInfo(author: Post["author"]) {
+function printAuthorInfo(author: PostList[number]["author"]) {
   console.log(`${author.name}-${author.id}`);
 }
 
-const post: Post = {
+const post: PostList[0] = {
   title: "게시글 제목",
   content: "게시글 본문",
   author: {
@@ -25,3 +25,5 @@ const post: Post = {
     age: 100,
   },
 };
+
+printAuthorInfo(post.author);
