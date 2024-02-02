@@ -96,5 +96,5 @@ const studentUser: User<Student> = {
   },
 };
 
-goToSchool(developerUser); // Error: 'User<Developer>' 형식의 인수는 'User<Student>' 형식의 매개 변수에 할당될 수 없습니다. 'school' 속성이 'Developer' 형식에 없지만 'Student' 형식에서 필수입니다.
+// goToSchool(developerUser); // Error: 'User<Developer>' 형식의 인수는 'User<Student>' 형식의 매개 변수에 할당될 수 없습니다. 'school' 속성이 'Developer' 형식에 없지만 'Student' 형식에서 필수입니다.
 goToSchool(studentUser);
