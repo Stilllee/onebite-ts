@@ -27,3 +27,13 @@ const post: PostList[0] = {
 };
 
 printAuthorInfo(post.author);
+
+type Tup = [number, string, boolean];
+
+type Tup0 = Tup[0]; // number
+
+type Tup1 = Tup[1]; // string
+
+type Tup2 = Tup[2]; // boolean
+
+type TupNumb = Tup[number]; // number | string | boolean
