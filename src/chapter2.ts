@@ -24,3 +24,23 @@ let d: StringNumberSwitch<boolean | number | string>;
 
 // 결과
 // number | string
+
+/**
+ * 실용적인 예제
+ */
+
+type Exclude<T, U> = T extends U ? never : T;
+
+type A = Exclude<number | string | boolean, string>;
+// 1단계
+// Exclude<number, string> |
+// Exclude<string, string> |
+// Exclude<boolean, string>
+
+// 2단계
+// number |
+// never |
+// boolean
+
+// 결과
+// number | boolean
