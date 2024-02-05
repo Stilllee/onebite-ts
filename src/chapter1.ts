@@ -36,3 +36,21 @@ const withThumbnailPost: Required<Post> = {
   content: "",
   thumbnailURL: "https://...",
 };
+
+/**
+ * Readonly<T>
+ * -> 읽기전용 수정불가
+ * -> 특정 객체 타입에서 모든 프로퍼티를 읽기 전용 프로퍼티로 만들어주는 타입
+ */
+
+type Readonly<T> = {
+  readonly [key in keyof T]: T[key];
+};
+
+const readonlyPost: Readonly<Post> = {
+  title: "보호된 게시글입니다.",
+  tags: [],
+  content: "",
+};
+
+// readonlyPost.content = "해킹당함"; // ❌
