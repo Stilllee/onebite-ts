@@ -1,41 +1,21 @@
 /**
- * 조건부 타입
+ * Partial<T>
+ * -> 부분적인, 일부분의
+ * -> 특정 객체 타입의 모든 프로퍼티를 선택적 프로퍼티로 바꿔주는 타입
  */
 
-type A = number extends string ? string : number;
-
-type ObjA = {
-  a: number;
-};
-
-type ObjB = {
-  a: number;
-  b: number;
-};
-
-type B = ObjB extends ObjA ? number : string;
-
-/**
- * 제네릭과 조건부 타임
- */
-
-type StringNumberSwitch<T> = T extends number ? string : number;
-
-let varA: StringNumberSwitch<number>;
-// string
-
-let varB: StringNumberSwitch<string>;
-// number
-
-function removeSpaces<T>(text: T): T extends string ? string : undefined;
-function removeSpaces(text: any) {
-  if (typeof text === "string") {
-    return text.replaceAll(" ", "");
-  } else {
-    return undefined;
-  }
+interface Post {
+  title: string;
+  tags: string[];
+  content: string;
+  thumbnailURL?: string;
 }
 
-let result = removeSpaces("hi im woodstock"); // string
+type Partial<T> = {
+  [key in keyof T]?: T[key];
+};
 
-let result2 = removeSpaces(undefined); // undefined
+const draft: Partial<Post> = {
+  title: "제목 나중에 짓자",
+  content: "초안...",
+};
