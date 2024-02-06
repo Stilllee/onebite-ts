@@ -19,3 +19,21 @@ const legacyPost: Pick<Post, "title" | "content"> = {
   title: "옛날 글",
   content: "옛날 컨텐츠",
 };
+
+/**
+ * Omit
+ * -> 생략하다, 빼다
+ * -> 객체 타입으로부터 특정 프로퍼티를 제거하는 타입
+ */
+
+type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
+// T = Post, K = "title"
+// Pick<Post, Exclude<keyof Post, "title">>
+// Pick<Post, Exclude<"title" | "tags" | "content" | "thumbnailURL", "title" >>
+// Pick<Post, "tags" | "content" | "thumbnailURL">
+
+const noTitlePost: Omit<Post, "title"> = {
+  content: "",
+  tags: [],
+  thumbnailURL: "",
+};
