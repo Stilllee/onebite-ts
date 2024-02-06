@@ -37,3 +37,16 @@ const noTitlePost: Omit<Post, "title"> = {
   tags: [],
   thumbnailURL: "",
 };
+
+/**
+ * Record<K, V>
+ */
+
+type Record<K extends keyof any, V> = {
+  [key in K]: V;
+};
+
+type Thumbnail = Record<
+  "large" | "medium" | "small" | "watch",
+  { url: string; size: number }
+>;
